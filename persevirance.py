@@ -11,6 +11,7 @@ from faker import Faker
 from plyer import notification
 import pyautogui
 import psutil
+import os
 
 # Initialize logging for terminal output
 logging.basicConfig(level=logging.INFO)
@@ -19,7 +20,8 @@ logging.basicConfig(level=logging.INFO)
 fake = Faker()
 
 # Configure the correct path to the Firefox geckodriver
-geckodriver_path = r"C:\Users\runneradmin\Desktop\geckodriver.exe"
+geckodriver_path = os.path.join(os.path.expanduser("~"), "Desktop", "geckodriver.exe")
+
 
 # Set up the Selenium WebDriver with FirefoxOptions
 options = Options()
